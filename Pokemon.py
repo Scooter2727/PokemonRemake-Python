@@ -9,13 +9,13 @@ import pygame # Pygame is only used for sound
                 ### Title Screen ###
 
 pygame.mixer.init()
-pygame.mixer.music.load("pokemonSong.wav") # Loads the theme
+pygame.mixer.music.load("assets/sounds/pokemonSong.wav") # Loads the theme
 
 pygame.mixer.music.set_volume(0.5) # Plays the music at 50% volume
 pygame.mixer.music.play(-1) # Loops the music
 
 titleWin = GraphWin("Welcome to Pokemon!", 1200, 700)
-titleScreen = Image(Point(600, 350), "finaltitlewin.gif")
+titleScreen = Image(Point(600, 350), "assets/images/finaltitlewin.gif")
 titleScreen.draw(titleWin)
 
 ### The cursor for the title screen ###
@@ -57,10 +57,10 @@ win = GraphWin("Choose a Pokemon", 1200, 700)
 if gameClose == True: # Checks if you pressed the option exit instead of start
         win.close()
         
-background = Image(Point(600, 350), "background.gif") # The image for the background
+background = Image(Point(600, 350), "assets/images/background.gif") # The image for the background
 background.draw(win)
 
-instructionFrame = Image(Point(275, 565), "bigframe.gif") # The image for the instructions in the bottom left corner of the screen
+instructionFrame = Image(Point(275, 565), "assets/images/bigframe.gif") # The image for the instructions in the bottom left corner of the screen
 instructionFrame.draw(win)
 
 instructions = Text(Point(275, 565), "Press 'e' to\n select your Pokemon!") # The text for the instructions
@@ -68,10 +68,10 @@ instructions.setSize(25)
 instructions.draw(win)
 
 ### The sprites for the starter Pokemon ###
-pikachu = Image(Point(190, 250), "pikachu.gif")
-charmander = Image(Point(450, 265), "charmander.gif")
-squirtle = Image(Point(750, 250), "squirtle.gif")
-bulbasaur = Image(Point(1010, 250), "bulbasaur.gif")
+pikachu = Image(Point(190, 250), "assets/images/pikachu.gif")
+charmander = Image(Point(450, 265), "assets/images/charmander.gif")
+squirtle = Image(Point(750, 250), "assets/images/squirtle.gif")
+bulbasaur = Image(Point(1010, 250), "assets/images/bulbasaur.gif")
 
 pikachu.draw(win)
 charmander.draw(win)
@@ -95,10 +95,10 @@ button3.draw(win)
 button4.draw(win)
 
 ### The sprites for the buttons ###
-pButton = Image(Point(700, 500), "pikachubutton.gif")
-cButton = Image(Point(1000, 500), "charmanderbutton.gif")
-sButton = Image(Point(700, 625), "squirtlebutton.gif")
-bButton = Image(Point(1000, 625), "bulbasaurbutton.gif")
+pButton = Image(Point(700, 500), "assets/images/pikachubutton.gif")
+cButton = Image(Point(1000, 500), "assets/images/charmanderbutton.gif")
+sButton = Image(Point(700, 625), "assets/images/squirtlebutton.gif")
+bButton = Image(Point(1000, 625), "assets/images/bulbasaurbutton.gif")
 
 pButton.draw(win)
 cButton.draw(win)
@@ -277,36 +277,36 @@ if pokemonChoice == 1: # Pikachu
         pokemonName = "Pikachu"
         specialAttack1 = "Thunderbolt"
         specialAttack2 = "Volt Tackle"
-        sAttack1 = Image(Point(700, 625), "thunderbolt.gif")
-        sAttack2 = Image(Point(1000, 625), "volttackle.gif")
+        sAttack1 = Image(Point(700, 625), "assets/images/thunderbolt.gif")
+        sAttack2 = Image(Point(1000, 625), "assets/images/volttackle.gif")
         
 if pokemonChoice == 2: # Charmander
         pokemonName = "Charmander"
         specialAttack1 = "Blast Burn"
         specialAttack2 = "Ember"
-        sAttack1 = Image(Point(700, 625), "blastburn.gif")
-        sAttack2 = Image(Point(1000, 625), "ember.gif")
+        sAttack1 = Image(Point(700, 625), "assets/images/blastburn.gif")
+        sAttack2 = Image(Point(1000, 625), "assets/images/ember.gif")
         
 elif pokemonChoice == 3: # Squirtle
         pokemonName = "Squirtle"
         specialAttack1 = "Waterfall"
         specialAttack2 = "Water Gun"
-        sAttack1 = Image(Point(700, 625), "waterfall.gif")
-        sAttack2 = Image(Point(1000, 625), "watergun.gif")
+        sAttack1 = Image(Point(700, 625), "assets/images/waterfall.gif")
+        sAttack2 = Image(Point(1000, 625), "assets/images/watergun.gif")
         
 elif pokemonChoice == 4: # Bulbasaur
         pokemonName = "Bulbasaur"
         specialAttack1 = "Poison Powder"
         specialAttack2 = "Razor Leaf"
-        sAttack1 = Image(Point(700, 625), "poisonpowder.gif")
-        sAttack2 = Image(Point(1000, 625), "razorleaf.gif")
+        sAttack1 = Image(Point(700, 625), "assets/images/poisonpowder.gif")
+        sAttack2 = Image(Point(1000, 625), "assets/images/razorleaf.gif")
 
 win.close()
 
                 ### Main Movement Window ###
 
 win = GraphWin("Pokemon", 1200, 700)
-gym = Image(Point(600, 350), "gym.gif")
+gym = Image(Point(600, 350), "assets/images/gym.gif")
 gym.draw(win)
 
 loseGame = False
@@ -319,7 +319,7 @@ def pokemonBattle ():
         
         battleWin = GraphWin("Battle Window", 1200, 700)
 
-        battleBackground = Image(Point(600, 350), "battlebackground.gif") # The background for the battle window
+        battleBackground = Image(Point(600, 350), "assets/images/battlebackground.gif") # The background for the battle window
         battleBackground.draw(battleWin)
 
         pShadow = Oval(Point(300, 500), Point(100, 600)) # The shadows for the Pokemon
@@ -336,30 +336,30 @@ def pokemonBattle ():
 
 ### Checks what Pokemon the user chose at the start then draws it in the battle window ###        
         if pokemonChoice == 1:
-                pikachu = Image(Point(200, 450), "pikachu.gif")
+                pikachu = Image(Point(200, 450), "assets/images/pikachu.gif")
                 pikachu.draw(battleWin)
         elif pokemonChoice == 2:
-                charmander = Image(Point(200, 450), "charmander.gif")
+                charmander = Image(Point(200, 450), "assets/images/charmander.gif")
                 charmander.draw(battleWin)
         elif pokemonChoice == 3:
-                squirtle = Image(Point(200, 450), "squirtle.gif")
+                squirtle = Image(Point(200, 450), "assets/images/squirtle.gif")
                 squirtle.draw(battleWin)
         elif pokemonChoice == 4:
-                bulbasaur = Image(Point(200, 450), "bulbasaur.gif")
+                bulbasaur = Image(Point(200, 450), "assets/images/bulbasaur.gif")
                 bulbasaur.draw(battleWin)
 ### Checks what battle you are on to find the corresponding Pokemon to fight ###                
         if battleCount == 0:
-                pidgey = Image(Point(1000, 300), "pidgey.gif")
+                pidgey = Image(Point(1000, 300), "assets/images/pidgey.gif")
                 pidgey.draw(battleWin)
         elif battleCount == 1:
-                diglet = Image(Point(1000, 300), "diglet.gif")
+                diglet = Image(Point(1000, 300), "assets/images/diglet.gif")
                 diglet.draw(battleWin)
         elif battleCount == 2:
-                onyx = Image(Point(1000, 300), "onyx.gif")
+                onyx = Image(Point(1000, 300), "assets/images/onyx.gif")
                 onyx.draw(battleWin)
 
-        pFrame = Image(Point(200, 250), "frame.gif")
-        eFrame = Image(Point(1000, 100), "frame.gif")
+        pFrame = Image(Point(200, 250), "assets/images/frame.gif")
+        eFrame = Image(Point(1000, 100), "assets/images/frame.gif")
 
         pFrame.draw(battleWin)
         eFrame.draw(battleWin)
@@ -380,8 +380,8 @@ def pokemonBattle ():
         enemyHealth.setSize(36)
         enemyHealth.draw(battleWin)
 
-        attack1 = Image(Point(700, 500), "quickattack.gif")
-        attack2 = Image(Point(1000, 500), "tackle.gif")
+        attack1 = Image(Point(700, 500), "assets/images/quickattack.gif")
+        attack2 = Image(Point(1000, 500), "assets/images/tackle.gif")
 
 ### The buttons ###
         button1 = Rectangle(Point(800, 550), Point(600, 450))
@@ -624,12 +624,12 @@ def pokemonBattle ():
                             bulbasaur.move(-10, 0)
                             time.sleep(0.1)
                             
-            attackSound = pygame.mixer.Sound("pokemonAttack.wav") # Plays an attack sound
+            attackSound = pygame.mixer.Sound("assets/sounds/pokemonAttack.wav") # Plays an attack sound
             attackSound.play()
 
                 ### Display Text ###
                             
-            textFrame = Image(Point(600, 350), "bigframe.gif") # The box that stores the text
+            textFrame = Image(Point(600, 350), "assets/images/bigframe.gif") # The box that stores the text
             textFrame.draw(battleWin)
             
             battleText.setSize(25)
@@ -729,21 +729,21 @@ def pokemonBattle ():
 
 ### Checks who won ###        
         if enemyHp < 1: # If you won
-            outcomeFrame = Image(Point(600, 350), "bigframe.gif")
+            outcomeFrame = Image(Point(600, 350), "assets/images/bigframe.gif")
             outcomeFrame.draw(battleWin)
             winText = Text(Point(600, 350), "You Win!")
             winText.setSize(36)
             winText.draw(battleWin)
-            outcomeMusic = pygame.mixer.Sound("winMusic.wav")
+            outcomeMusic = pygame.mixer.Sound("assets/sounds/winMusic.wav")
             
         elif pokemonHp < 1: # If your opponent won
             battleCount -= 1
-            outcomeMusic = pygame.mixer.Sound("loseMusic.wav")
+            outcomeMusic = pygame.mixer.Sound("assets/sounds/loseMusic.wav")
             loseWin = GraphWin("You Lose :(", 1200, 700)
-            loseWinImage = Image(Point(600, 350), "LoseWinImage.gif")
+            loseWinImage = Image(Point(600, 350), "assets/images/loseWinImage.gif")
             loseWinImage.draw(loseWin)
 
-            loseMusic = pygame.mixer.Sound("loseMusic.wav")
+            loseMusic = pygame.mixer.Sound("assets/sounds/loseMusic.wav")
             loseMusic.play()
             time.sleep(3)
 
@@ -757,9 +757,9 @@ def pokemonBattle ():
         
                 ### Graphics for the trainers ###
 
-trainer1 = Image(Point(465, 390), "redr.gif")
-trainer2 = Image(Point(510, 295), "redr.gif")
-trainer3 = Image(Point(690, 480), "redl.gif")
+trainer1 = Image(Point(465, 390), "assets/images/redr.gif")
+trainer2 = Image(Point(510, 295), "assets/images/redr.gif")
+trainer3 = Image(Point(690, 480), "assets/images/redl.gif")
 
 trainer1.draw(win)
 trainer2.draw(win)
@@ -774,10 +774,10 @@ def MovePlayer():
         playerX = 600 # Tracks the players x value
         playerY = 680 # Tracks the players y value
 
-        player = Image(Point(playerX, playerY), "front.gif") # The front view of the player
+        player = Image(Point(playerX, playerY), "assets/images/front.gif") # The front view of the player
         player.draw(win)
 
-        trophy = Image(Point(600, 200), "trophy.gif") # The sprite for the trophy
+        trophy = Image(Point(600, 200), "assets/images/trophy.gif") # The sprite for the trophy
         trophy.draw(win)
               
         while True:
@@ -792,7 +792,7 @@ def MovePlayer():
                 playerY -= moveSpeed
                 if l != "w": # Checks if the last pressed key is not the same as the currently pressed key to save undrawing and redrawing
                         player.undraw() # Changes the sprite of the player when the player changes direction
-                        player = Image(Point(playerX, playerY), "back.gif")
+                        player = Image(Point(playerX, playerY), "assets/images/back.gif")
                         player.draw(win)
                 
             elif k.lower() == "a":
@@ -800,7 +800,7 @@ def MovePlayer():
                 playerX -= moveSpeed
                 if l != "a": # Checks if the last pressed key is not the same as the currently pressed key to save undrawing and redrawing
                         player.undraw() # Changes the sprite of the player when the player changes direction
-                        player = Image(Point(playerX, playerY), "facingleft.gif")
+                        player = Image(Point(playerX, playerY), "assets/images/facingleft.gif")
                         player.draw(win)
                 
             elif k.lower() == "s":
@@ -808,7 +808,7 @@ def MovePlayer():
                 playerY += moveSpeed
                 if l != "s": # Checks if the last pressed key is not the same as the currently pressed key to save undrawing and redrawing
                         player.undraw() # Changes the sprite of the player when the player changes direction
-                        player = Image(Point(playerX, playerY), "front.gif")
+                        player = Image(Point(playerX, playerY), "assets/images/front.gif")
                         player.draw(win)
                 
             elif k.lower() == "d":
@@ -816,7 +816,7 @@ def MovePlayer():
                 playerX += moveSpeed
                 if l != "d": # Checks if the last pressed key is not the same as the currently pressed key to save undrawing and redrawing
                         player.undraw() # Changes the sprite of the player when the player changes direction
-                        player = Image(Point(playerX, playerY), "facingright.gif")
+                        player = Image(Point(playerX, playerY), "assets/images/facingright.gif")
                         player.draw(win)
 
             l = k.lower() # The last pressed key
@@ -865,10 +865,10 @@ while battleCount <= 3: # Loops until the player has reached the trophy
         MovePlayer()
         win.close()
         win = GraphWin("Pokemon", 1200, 700)
-        gym = Image(Point(600, 350), "gym.gif")
+        gym = Image(Point(600, 350), "assets/images/gym.gif")
         gym.draw(win)
 
-        trophy = Image(Point(600, 200), "trophy.gif")
+        trophy = Image(Point(600, 200), "assets/images/trophy.gif")
         trophy.draw(win)
 
         trainer1.draw(win)
@@ -877,16 +877,13 @@ while battleCount <= 3: # Loops until the player has reached the trophy
         
 ### The window that plays when the player completes the game ###
 exitWin = GraphWin("Thanks for playing Pokemon!", 1200, 700)
-exitScreen = Image(Point(600, 350), "thanks4playin.gif")
+exitScreen = Image(Point(600, 350), "assets/images/thanks4playin.gif")
 exitScreen.draw(exitWin)
 
-winMusic = pygame.mixer.Sound("winMusic.wav")
+winMusic = pygame.mixer.Sound("assets/sounds/winMusic.wav")
 pygame.mixer.music.stop()
 winMusic.play()
 time.sleep(3)
 
 exitWin.close()
 win.close()
-        
-        
-
